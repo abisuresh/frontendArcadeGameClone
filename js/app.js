@@ -52,8 +52,16 @@ class Player {
     ctx.drawImage(Resources.get(this.spriteImage), this.xPos, this.yPos);
   }
 
-  handleInput(){
-
+  handleInput(direction){
+      if('left' == direction && this.xPos>0){
+        this.xPos = this.xPos - 100;
+      }else if('right' == direction && this.xPos<400){
+        this.xPos = this.xPos + 100;
+      }else if('up' == direction && this.yPos>0){
+        this.yPos = this.yPos - 100;
+      }else if('down' == direction && this.yPos<400){
+        this.yPos = this.yPos + 100;
+      }
   }
 
   update(){
