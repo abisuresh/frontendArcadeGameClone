@@ -19,6 +19,10 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 
     //if collision with player
+    if(this.positionEnemyX <= (player.xPos + 50) && this.positionEnemyX >= (player.xPos - 50))
+    {
+      player.reset();
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -44,7 +48,6 @@ class Player {
   //update method
   get pos(){
     return this.xPos, this.yPos;
-
   }
 
   // Draw the Player on the screen, required method for game
@@ -52,6 +55,9 @@ class Player {
     ctx.drawImage(Resources.get(this.spriteImage), this.xPos, this.yPos);
   }
 
+  //Check if whether input key is left, right, up or down and change x position
+  //accordingly. Only move player in these directions if the movement would not
+  //put the player off the canvas
   handleInput(direction){
       if('left' == direction && this.xPos>0){
         this.xPos = this.xPos - 100;
@@ -64,13 +70,20 @@ class Player {
       }
   }
 
-  update(){
+  reset() {
+    this.xPos = 200;
+    this.yPos = 400;
+  }
 
+  update(){
+    if(this.yPos<=0)
+    {
+      player.reset();
+      alert('You have won!');
+    }
   }
 
 };
-
-
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -78,11 +91,6 @@ class Player {
 
 var allEnemies = [new Enemy()];
 var player= new Player(); //player object
-
-// var newEngine= (function(global){
-//   Engine.main();
-// })();
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
