@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function() {
+var Enemy = function(inputSpeed, inputYPosition) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -8,6 +8,8 @@ var Enemy = function() {
     this.sprite = 'images/enemy-bug.png';
     this.positionEnemyX = 0;
     this.speed= 10;
+    this.speed = inputSpeed;
+    this.positionEnemyY = inputYPosition;
 };
 
 // Update the enemy's position, required method for game
@@ -28,7 +30,7 @@ Enemy.prototype.update = function(dt) {
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     this.y = 0;
-    ctx.drawImage(Resources.get(this.sprite), this.positionEnemyX, this.y);
+    ctx.drawImage(Resources.get(this.sprite), this.positionEnemyX, this.positionEnemyY);
 };
 
 // Now write your own player class
@@ -89,7 +91,7 @@ class Player {
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a variable called player
 
-var allEnemies = [new Enemy()];
+var allEnemies = [new Enemy(10, 100), new Enemy(20, 200)];
 var player= new Player(); //player object
 
 // This listens for key presses and sends the keys to your
