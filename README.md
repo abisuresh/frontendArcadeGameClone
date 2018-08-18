@@ -1,23 +1,18 @@
 frontend-nanodegree-arcade-game
 ===============================
-
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
-
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
-
 Description of game:
 Goal of game is get player to water side of canvas. The user pushes the left, right, up or down arrow keys to move. There are 3 enemy bugs crawling across the screen and the player has to avoid them while making her/his way across.
 
 How to run the game (method 1):
-- Clone the repository in Git
+- Clone the repository in Git (https://github.com/abisuresh/frontendArcadeGameClone)
 - Open the folder in your finder/Windows Explorer
 - Double click on index.html
 
 How to run the game (method 2):
-- Go to this site: https://abisuresh.github.io/frontendArcadeGameClone/index.html 
+- Go to this site: https://abisuresh.github.io/frontendArcadeGameClone/index.html
 
 General rules on how to play the game:
-- Navigate to webpage that opened when you opened index.html
+- Navigate to webpage that opened when you opened index.html or clicked on link above
 - Press left, right, up or down arrows to move player
 - Avoid hitting any of the bugs
 - If a player hits a bug (enemy) the game immediately resets and the player is moved back to the start.
